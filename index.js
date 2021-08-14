@@ -69,7 +69,7 @@ async function downloadFile(fileUrl, outputLocationPath, ctx, duration) {
           .output(path.join(__dirname, '/audiosToSave/trimmedAudio.mp3'))
           .on('end', () => {
             // ctx.body = path.join(__dirname, '/audiosToSave/trimmedAudio.mp3');
-            resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); // fix stdout
+            resolve(`https://audio-trimmer-koa.herokuapp.com/audiosToSave/trimmedAudio.mp3`); // fix stdout
           })
           .run();
     });
