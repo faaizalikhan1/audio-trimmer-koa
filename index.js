@@ -60,7 +60,7 @@ async function downloadFile(fileUrl, outputLocationPath, ctx, duration) {
         )}`,
         async (error, stdout, stderr) => {
           console.log(error, stdout, stderr);
-          resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); 
+          resolve(`https://audio-trimmer-koa.herokuapp.com/audiosToSave/trimmedAudio.mp3`); 
         }
       );
         // FfmpegCommand(outputLocationPath)
