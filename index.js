@@ -53,25 +53,25 @@ async function downloadFile(fileUrl, outputLocationPath, ctx, duration) {
       await finished(writer); //this is a Promise
       // var process = new ffmpeg(outputLocationPath);
 
-      child_process.exec(
-        `ffmpeg -i ${outputLocationPath} -acodec copy -ss ${duration} -t 10 ${path.join(
-          __dirname,
-          '/audiosToSave/trimmedAudio.mp3'
-        )}`,
-        async (error, stdout, stderr) => {
-          console.log(error, stdout, stderr);
-          resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); 
-        }
-      );
-      //   FfmpegCommand(outputLocationPath)
-      //     .inputOptions([`-ss ${duration}`, '-t 10']) // 2s
-      //     .audioCodec('copy')
-      //     .output(path.join(__dirname, '/audiosToSave/trimmedAudio.mp3'))
-      //     .on('end', () => {
-      //       // ctx.body = path.join(__dirname, '/audiosToSave/trimmedAudio.mp3');
-      //       resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); // fix stdout
-      //     })
-      //     .run();
+    //   child_process.exec(
+    //     `ffmpeg -i ${outputLocationPath} -acodec copy -ss ${duration} -t 10 ${path.join(
+    //       __dirname,
+    //       '/audiosToSave/trimmedAudio.mp3'
+    //     )}`,
+    //     async (error, stdout, stderr) => {
+    //       console.log(error, stdout, stderr);
+    //       resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); 
+    //     }
+    //   );
+        FfmpegCommand(outputLocationPath)
+          .inputOptions([`-ss ${duration}`, '-t 10']) // 2s
+          .audioCodec('copy')
+          .output(path.join(__dirname, '/audiosToSave/trimmedAudio.mp3'))
+          .on('end', () => {
+            // ctx.body = path.join(__dirname, '/audiosToSave/trimmedAudio.mp3');
+            resolve(`http://localhost:3000/audiosToSave/trimmedAudio.mp3`); // fix stdout
+          })
+          .run();
     });
   });
 }
