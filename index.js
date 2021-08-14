@@ -52,7 +52,7 @@ async function downloadFile(fileUrl, outputLocationPath, ctx, duration) {
       response.data.pipe(writer);
       await finished(writer); //this is a Promise
       // var process = new ffmpeg(outputLocationPath);
-
+        console.log('UPLOADING NOWW')
       child_process.exec(
         `ffmpeg -i ${outputLocationPath} -acodec copy -ss ${duration} -t 10 ${path.join(
           __dirname,
