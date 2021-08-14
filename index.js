@@ -3,7 +3,7 @@ const Router = require('@koa/router');
 const cors = require('@koa/cors');
 // const ffmpeg = require('ffmpeg');
 var FfmpegCommand = require('fluent-ffmpeg');
-
+const PORT = process.env.PORT || 3000;
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
@@ -69,6 +69,6 @@ async function downloadFile(fileUrl, outputLocationPath, ctx, duration) {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server started on port 3000');
 });
