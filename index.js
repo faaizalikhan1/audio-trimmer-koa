@@ -15,6 +15,8 @@ app.use(cors());
 
 
 
+
+
 app.use(require('koa-static')(path.join(__dirname)));
 
 const router = new Router();
