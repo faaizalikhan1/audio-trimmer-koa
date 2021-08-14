@@ -10,7 +10,6 @@
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.0",
     "axios": "^0.21.1",
-    "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "koa": "^2.13.1",
     "koa-static": "^5.0.0"
